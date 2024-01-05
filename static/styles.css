@@ -1,0 +1,61 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #d5f0fd; /* Light Blue Background */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #f96b00; /* orange Header Background */
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+}
+
+.container {
+    max-width: 100%; /* Adjust the percentage as needed */
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff; /* White Container Background */
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+}
+
+table {
+    width: 120%; /* Adjust the percentage as needed */
+    border-collapse: collapse;
+    margin-top: 12px;
+    border: 2px solid #0074d9; /* Light Sky Blue Border */
+}
+
+th {
+    background-color: #0074d9; /* Light Sky Blue Header Background */
+    color: #fff;
+    border: 2px solid #0074d9; /* Light Sky Blue Border */
+    padding: 12px;
+    white-space: nowrap; /* Prevent text wrapping in header cells */
+}
+
+
+td {
+    border: 2px solid #0074d9; /* Light Sky Blue Border */
+    padding: 12px;
+    text-align: left;
+    white-space: normal; /* Allow text to break and wrap */
+    overflow: visible; /* Visible overflow for long text */
+    max-height: none;
+    vertical-align: top; /* Align text to the top */
+    /* Set the initial height as needed */
+    transition: max-height 0.5s ease;
+    cursor: text; /* Change cursor for editable cells */
+}
+
+.editable:hover {
+    background-color: #f0f0f0;
+}
+
+.highlight {
+    background-color: #0074d9; /* Set your desired highlight color */
+    font-weight: bold;
+}

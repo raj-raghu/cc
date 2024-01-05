@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Xilinx Job Descriptions</title>
+</head>
+
+<body>
+    <header>
+        <h1>Xilinx Job Descriptions</h1>
+    </header>
+
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    {% for column in columns %}
+                    <th>{{ column }}</th>
+                    {% endfor %}
+                    <th>Domain</th>
+                    <th>SubDomain</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in data %}
+                <tr class="job-row">
+                    {% for index in range(row|length) %}
+                        <td class="editable" contenteditable="true">
+                            {% if index == 6 %}
+                                {% set value = row[index] %}
+                                {% set highlightedValue = value.replace("KEY RESPONSIBILITIES", '<span class="highlight">KEY RESPONSIBILITIES</span>') %}
+                                {{ highlightedValue | safe }}
+                            {% else %}
+                                {{ row[index] }}
+                            {% endif %}
+                        </td>
+                    {% endfor %}
+                    <td class="editable" contenteditable="true"></td> <!-- Domain -->
+                    <td class="editable" contenteditable="true"></td> <!-- SubDomain -->
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
